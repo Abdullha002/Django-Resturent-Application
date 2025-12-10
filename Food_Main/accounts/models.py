@@ -40,8 +40,8 @@ class User(AbstractBaseUser):
     RESTUARENT = 1
     CUSTOMER = 2
     ROLE_CHOICE = (
-        (RESTUARENT, 'restuarent'),
-        (CUSTOMER, 'customer')
+        (RESTUARENT, 'Restuarent'),
+        (CUSTOMER, 'Customer')
     )
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -77,6 +77,7 @@ class User(AbstractBaseUser):
     
     def has_module_perms(self, app_label):
         return True
+    
     
 # User Profile
 
