@@ -64,7 +64,7 @@
 							<div class="login-option">
 								{% if user.is_authenticated %}
 									<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'logout' %}"> Logout </a>
-									<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'dashboard' %}"> MyAccount </a>
+									<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'myAccount' %}"> MyAccount </a>
 								{% else %}
 								<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'login' %}"> Login / 
 									<span>
