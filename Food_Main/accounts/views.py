@@ -164,11 +164,7 @@ def customerDashboard(request):
 @login_required(login_url='login')
 @user_passes_test(check_role_vendor)
 def vendorDashboard(request):
-    vendor = Vendor.objects.grt(user = request.user)
-    context = {
-        'vendor' : vendor,
-    }
-    return render(request, "accounts/vendorDash.html", context)
+    return render(request, "accounts/vendorDash.html")
 
 # activate registration process
 def activate(request, uidb64, token):
