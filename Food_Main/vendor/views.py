@@ -4,6 +4,7 @@ from . models import Vendor
 from . forms import VendorForm
 from accounts.forms import UserProfileForm
 from django.contrib import messages
+from menu.models import Category, FoodItem
 
 # Create your views here.
 
@@ -30,3 +31,21 @@ def profile(request):
         'vendor' : vendor
     }
     return render(request, 'vendor/vend_profile.html', context)
+
+def menu_builder(request):
+    vendor = Vendor.objects.get(user = request.user)
+    categories = Category.objects.filter(vendor=vendor)
+    context = {
+        'categories' : categories
+    }
+    return render(request, "vendor/menu_builder.html", context)
+
+def fooditem_by_category(request, pk=None):
+    vendor = Vendor.objects.get(user = request.user)
+    category = get_object_or_404(Category, pk=pk)
+    fooditems = FoodItem.objects.filter(vendor=vendor,category=category)
+    context = {
+        'category' : category,
+        'fooditems' : fooditems
+    }
+    return render(request, "vendor/fooditem_by_category.html", context)
