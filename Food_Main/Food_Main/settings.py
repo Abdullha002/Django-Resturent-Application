@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'vendor',
-    'menu'
+    'menu',
+    'marketplace',
 ]
 
 MIDDLEWARE = [

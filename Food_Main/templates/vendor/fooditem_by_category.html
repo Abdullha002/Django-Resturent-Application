@@ -39,6 +39,13 @@
                                                         <td class="text-muted">
                                                             <td class="text-muted"> {{food.price}} </td>
                                                         </td>
+                                                        <td>
+                                                            {% if food.is_available %}
+                                                                <span class="badge badge-success text-white p-2">Available</span>
+                                                            {% else %}
+                                                                <span class="badge badge-danger text-white p-2">Not Available</span>
+                                                            {% endif %}
+                                                        </td>
                                                     </td>
                                                     <td>
                                                         <a href="{% url 'edit_food' food.id %}"><i class="fa fa-pencil text-success"></a></i> 
