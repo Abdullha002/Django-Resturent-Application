@@ -18,6 +18,8 @@ def get_vendor(request):
     vendor = Vendor.objects.get(user=request.user)
     return vendor
 
+# Profile function
+
 @login_required(login_url='login')
 @user_passes_test(check_role_vendor)
 def profile(request):
